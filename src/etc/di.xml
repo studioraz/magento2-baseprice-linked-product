@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Register the BasePriceVirtualAttribute in SR_SimpleProductLink's virtual attribute pool -->
+    <type name="SR\SimpleProductLink\Model\VirtualAttribute\Pool">
+        <arguments>
+            <argument name="attributes" xsi:type="array">
+                <item name="sr_baseprice_amount_unit"
+                      xsi:type="object">SR\BasePriceLinkedProduct\Model\BasePriceVirtualAttribute</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Configure the unit → category label map for UnitCategoryResolver.
+         Keys are admin-scope (store_id=0) option labels in lowercase.
+         Values are translation keys passed through __() in resolve(). -->
+    <type name="SR\BasePriceLinkedProduct\Model\UnitCategoryResolver">
+        <arguments>
+            <argument name="unitCategoryMap" xsi:type="array">
+                <item name="kg" xsi:type="string">Weight</item>
+                <item name="g"  xsi:type="string">Weight</item>
+                <item name="mg" xsi:type="string">Weight</item>
+                <item name="l"  xsi:type="string">Volume</item>
+                <item name="ml" xsi:type="string">Volume</item>
+                <item name="m"  xsi:type="string">Size</item>
+                <item name="cm" xsi:type="string">Size</item>
+                <item name="mm" xsi:type="string">Size</item>
+            </argument>
+            <!-- Fallback label is also passed through __() in resolve() -->
+            <argument name="fallbackLabel" xsi:type="string">Units</argument>
+        </arguments>
+    </type>
+
+</config>

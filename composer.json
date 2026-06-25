@@ -1,0 +1,28 @@
+{
+    "name": "studioraz/magento2-baseprice-linked-product",
+    "description": "Bridge module: registers BasePrice product-amount+unit as a virtual variation attribute in SR_SimpleProductLink",
+    "type": "magento2-module",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "magento/framework": ">=103",
+        "studioraz/magento2-simple-product-link": "^1.0",
+        "studioraz/magento2-baseprice": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SR\\BasePriceLinkedProduct\\": "src"
+        },
+        "files": [
+            "src/registration.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SR\\BasePriceLinkedProduct\\Test\\": "tests"
+        }
+    }
+}
