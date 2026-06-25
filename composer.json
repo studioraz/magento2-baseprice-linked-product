@@ -6,7 +6,7 @@
     "require": {
         "php": ">=8.1",
         "magento/framework": ">=103",
-        "studioraz/magento2-simple-product-link": "^1.0",
+        "studioraz/magento2-simple-product-link": "*",
         "studioraz/magento2-baseprice": "*"
     },
     "require-dev": {
