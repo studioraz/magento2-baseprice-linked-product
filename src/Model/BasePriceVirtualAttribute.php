@@ -77,8 +77,8 @@ class BasePriceVirtualAttribute implements VirtualAttributeInterface
             return null;
         }
 
-        // Format the decimal: strip trailing zeros after decimal point
-        $formattedAmount = rtrim(rtrim((string)(float)$amount, '0'), '.');
+        // The raw amount is always decimal (e.g. 20.000000), so trim trailing zeros and dot
+        $formattedAmount = rtrim(rtrim((string)$amount, '0'), '.');
 
         return $formattedAmount . ' ' . (string)$unitText;
     }
